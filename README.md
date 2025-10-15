@@ -16,7 +16,7 @@ This repository contains the **backend** of the Visual Product Matcher app, impl
 
 ## 🚀 Deployment
 
-- **Backend (Railway):** [Backend Link](https://unthinkable-visual-product-backend-production-0a98.up.railway.app)
+- **Backend (Railway):** [Backend Link](https://unthinkable-visual-product-matcher-backend-production.up.railway.app)
 
 ---
 
