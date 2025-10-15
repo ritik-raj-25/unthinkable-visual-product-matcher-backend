@@ -136,9 +136,13 @@ public class DataLoader implements CommandLineRunner {
 		productRepository.saveAll(products);
 
 		for (Product product : products) {
-			float[] embedding = embeddingService.embedFromUrl(product.getImageUrl());
-			product.setEmbedding(embedding);
-			Thread.sleep(10000); // to respect rate limits
+			try {
+				float[] embedding = embeddingService.embedFromUrl(product.getImageUrl());
+				product.setEmbedding(embedding);
+			} catch (Exception e) {
+				System.out.println("Failed embedding for: " + product.getImageUrl());
+			}
+			Thread.sleep(10000); // to avoid hitting rate limits
 		}
 
 		productRepository.saveAll(products);
